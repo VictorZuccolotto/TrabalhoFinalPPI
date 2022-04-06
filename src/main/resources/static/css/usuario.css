@@ -1,0 +1,184 @@
+/* Configurações */
+
+.linha-vertical {
+	height: 500px; 
+	border-left: 1px solid;
+	color: #D9D9D9;
+}
+
+.configuracao-section .container {
+	max-width: 960px;
+	min-height: 500px;
+	margin-top: 150px;
+	background-color: white;
+	border-radius: 20px;
+	margin-bottom: 50px;
+}
+
+.menu {
+	width: 300px;
+	flex-direction: column;
+	margin: 15px;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	justify-content: start;
+}
+
+.menu li {
+	width: 100%;
+	border: #D9D9D9 1px solid;
+	border-radius: 10px;
+	padding: 5px;
+	margin: 3px;
+}
+
+.menu li:hover {
+	background-color: #D9D9D9;
+}
+
+.opcoes {
+	max-width: 660px;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.opcoes a {
+	height: 200px;
+}
+
+.anuncios-card {
+    margin: 20px;
+    width: 150px;
+    height: 100%;
+    background-color: #fff;
+    border: #D9D9D9 2px solid;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
+}
+
+.anuncios-card img {
+    text-align: center;
+    max-height: 100px;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+
+.anuncios-card:hover {
+	background-color: #D9D9D9;
+}
+
+.anuncios-card p {
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin-top: 15px;
+}
+
+
+/* Alterar dados  */
+.mudar-dados-form {
+	flex-direction: column;
+	margin-left: 100px;
+	border: #D9D9D9 2px solid;
+	border-radius: 20px;
+	padding-right: 20px;
+	margin-top: 50px;
+	height: 400px;
+	width: 500px;
+}
+
+.mudar-dados .btn-cadastro {
+	width: 300px;
+	height: 50px;
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+.nome-input, .sobrenome-input, .email-input, .senha-input, .telefone-input, .cep-input {
+	border-radius: 20px;
+	border-color: #D9D9D9;
+	border-style: solid;
+	margin-left: 10px;
+	width: 350px;
+}
+
+.nome, .sobrenome, .email, .senha, .telefone, .cep {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+@media (max-width: 960px) {
+
+	.configuracao-section {
+		margin-top: 300px;
+	}
+
+	.configuracao-section .configuracao {
+		height: 700px;
+		width: 100%;
+	}
+
+	.menu li{
+		width: 300px;
+		text-align: center;
+	}
+
+	.menu ul {
+		width: 200px;
+	}
+
+	.menu a {
+		width: 100px;
+	}
+
+	.linha-vertical {
+		display: none;
+	}
+
+	.sair {
+		margin-top: 55px;
+	}
+}
+
+@media (max-width: 570px) {
+
+	.minha-conta {
+		margin-top: 55px;
+	}
+
+	.mudar-dados-form {
+		width: 300px;
+		margin: 0;
+	}
+
+	.nome-input, .sobrenome-input, .email-input, .senha-input, .telefone-input, .cep-input {
+		width: 140px;
+	}
+
+	.mudar-dados .btn-cadastro {
+		width: 100px;
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 382px) {
+	.configuracao-section .configuracao {
+		height: 1130px;
+		width: 100%;
+	}
+
+	.opcoes a{
+		margin: 10px;
+	}
+
+	.sair {
+		margin: 25px;
+	}
+
+	.minha-conta {
+		margin: 23px;
+	}
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aproveita - Login</title>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cadastro-login.css">
+<script>
+	document.documentElement.classList.add("js");
+</script>
+<script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+<script src="https://unpkg.com/axios@0.26.0/dist/axios.min.js"></script>
+</head>
+<body>
+
+	<section class="fazer-login-section">
+
+		<div class="fazer-login container" id="app">
+			<a href="/"><img src="img/icone-site-removebg.png"></a>
+			<h1>Login</h1>
+
+			<div class="erro container">
+				<ul>
+  					<li>{{erros}}</li>
+				</ul>
+			</div>
+
+			<form class="login-form flex" method="post" action="/login" >
+
+				<div>
+					<label for="email">Email: </label> <input class="email" type="text"
+						name="email" v-model="login.email">
+				</div>
+
+				<div>
+					<label for="senha">Senha: </label> <input class="senha"
+						type="password" name="senha" v-model="login.senha">
+				</div>
+
+				<input class="btn-cadastro" type="submit"
+					v-on:click.prevent="botao()" value="Login">
+
+			</form>
+
+			<div class="opcaoCadastro flex">
+				<p>Não tem uma conta?</p>
+				<a href="/cadastro" class="btn-cadastro">Cadastro</a>
+			</div>
+		</div>
+
+		<div class="container politica">
+			<p>Ao continuar, você concorda com os Termos de Uso e a Política
+				de Privacidade da Aproveita.</p>
+		</div>
+
+	</section>
+
+	<script src="./js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+.anuncios-categoria-section {
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.subtitulo-anuncios-categoria {
+    background-color: #fff;
+    border-radius: 20px;
+    max-width: 900px;
+}
+
+.subtitulo-anuncios-categoria p {
+    margin: 20px;
+    font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 20px;
+	font-weight: bold;
+}
+
+.div-foto {
+    margin: 25px;
+    text-align: center;
+	max-height: 200px;
+    width: 350px;
+}
+
+.div-foto img {
+    text-align: center;
+	max-height: 200px;
+    max-width: 350px;
+	margin: 0 auto;
+	margin-top: 12px;
+    border-radius: 15px;
+
+}
+
+.div-preco {
+    margin: 40px;
+    width: 400px;
+}
+
+.card-produto {
+    flex-direction: row;
+    text-align: center;
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 18px;
+}
+
+.card-produto a:hover {
+    color:#F19F4D;
+}
+
+.anuncio-nome {
+    width: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
+    align-items: center;
+    text-align: left;
+}
+
+.anuncio-preco {
+    width: 100px;
+    align-items: center;
+    text-align: left;
+}
+
+.anuncios-categoria-section label{
+    font-size: 15px;
+    margin-left: 50px;
+}
+
+.btn-ordenar {
+    margin-left: 5px;
+    margin-bottom: 8px;
+    letter-spacing: 1em;
+}
+
+.btn-ordenar button {
+    font-size: 13px;
+    background-color: white;
+    color: black;
+    border: 1px solid #000000; 
+    margin-bottom: 6px;
+    margin-right: 2px;
+}
+
+.btn-ordenar button:hover{
+    color: #F19F4D;
+}
+
+/* Responsividade  */
+
+@media (max-width: 960px) {
+
+    .anuncios-categoria-section {
+        margin-top: 300px;
+    }
+
+    .ordenacao {
+        width: 380px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 790px) {
+
+    .div-preco {
+        flex-direction: column;
+        text-align: center;
+        width: 80px;
+        margin: auto;
+    }
+
+    .anuncio-nome {
+        margin: 0;
+    }
+
+    .ordenacao label {
+        margin: 0;
+    }
+}
+
+@media (max-width: 590px) {
+    .card-produto a {
+        flex-direction: column;
+    }
+
+    .ordenacao label {
+        margin: 0;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .card-produto {
+        margin-left: 25px;
+    }
+
+    .div-foto {
+        width: 280px;
+        max-height: 300px;
+    }
+
+    .div-foto img {
+        max-width: 280px;
+    }
+
+    .div-preco {
+        width: 300px;
+        align-items: center;
+    }
+
+    .anuncio-nome {
+        text-align: center;
+    }
+
+    .anuncio-nome h2 {
+        width: 100%;
+    }
+
+    .anuncio-preco {
+        margin-left: 35px;
+    }
+
+    .ordenacao label {
+        margin: 0;
+    }
+}

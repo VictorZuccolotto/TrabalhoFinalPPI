@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aproveita - Cadastro</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro-login.css">
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios@0.26.0/dist/axios.min.js"></script>
+</head>
+<body>
+    
+    <section class="fazer-cadastro-section">
+
+        <div class="fazer-cadastro container" id="app">
+            <a href="/"><img src="img/icone-site-removebg.png"></a>
+            <h1>Faça seu cadastro grátis</h1>
+
+            <div class="erro container">
+                <ul>
+                	<li v-for="erro in erros">{{erro}}</li>
+                </ul>
+            </div>
+
+            <form class="cad-form flex" method="post" action="">
+
+                <div class="divisao flex">
+                    <div class="labels flex">
+                        <label class="label-nome" for="nome">Nome: </label>
+                        <label class="label-sobre-nome" for="sobrenome">Sobrenome: </label>
+                        <label class="label-email" for="email">E-mail: </label>
+                        <label class="label-senha" for="senha">Senha: </label>
+                        <label class="label-tel" for="telefone">Telefone: </label>
+                        <label class="label-cep" for="cep">CEP: </label>
+                    </div>
+                
+                    <div class="inputs flex">
+                        <input class="nome" type="text" name="nome" v-model="user.nome">
+                        <input class="sobre-nome" type="text" name="sobrenome" v-model="user.sobrenome">
+                        <input class="email" type="text" name="email" v-model="user.email">
+                        <input class="senha" type="password" name="senha" v-model="user.senha">
+                        <input class="telefone" type="text" name="telefone" v-model="user.telefone">
+                        <input class="cep" type="text" name="cep" v-model="user.cep">
+                    </div>
+                </div>
+
+                    <input class="btn-cadastro" type="submit" v-on:click.prevent="botao()" value="Cadastrar"> 
+            </form>
+
+            <div class="opcaoLogin flex">  
+                <p>Já tem uma conta?</p> 
+                <a href="/login" class="btn-cadastro">Login</a>
+            </div>
+
+
+        </div>
+        
+        <div class="container politica">
+            <p>Ao continuar, você concorda com os Termos de Uso e a Política de Privacidade da Aproveita.</p>
+        </div>
+
+    </section>
+    
+
+    <script src="./js/cadastro.js"></script>
+</body>
+</html>

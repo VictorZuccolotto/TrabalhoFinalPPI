@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aproveita - Anúncio</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/anuncio.css">
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios@0.26.0/dist/axios.min.js"></script>
+</head>
+<body>
+       <header class="header">
+        <div class="container">
+            <div class="icone-site">
+                <a href="/" class="grid-4">
+                    <img src="img/icone-site.png">
+                </a>
+            </div>
+            <nav class="grid-12 header_menu">
+                <ul>
+                    <li>
+                        <div class="flex">
+                            <img class="logo1" src="img/megafone.png">
+                            <a href="/criar-anuncio">Criar anúncio</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="flex" id="app2">
+                            <img class="logo3" src="img/user.png">
+                            <a v-if="logado()" href="/usuario">{{nome}}</a>
+                            <a v-else="logado()" href="/login">Entrar</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="./js/logado.js"></script>
+
+    <section class="anuncio-section">
+        <div class="anuncio container flex" id="anuncio">
+            
+            <div class="divisao1 flex">
+            
+                <div class="detalhes1">
+                    <h2>Vendo {{anuncio.nome}}</h2>
+
+                    <div class="div-img">
+                        <img alt="" v-bind:src="url">
+                    </div>
+
+                    <h3>R${{anuncio.preco}}</h3>
+                </div>
+
+                <div class="descricao-produto">
+                    <h2>Mais informações do produto: </h2>
+                    <h4>{{anuncio.descricao}}</h4>
+                </div>
+            </div>
+
+            <div class="divisao2 flex">
+                <div class="detalhes2">
+                    <h3><img class="img-vendedor" src="img/vendedor.png">{{anuncio.nomeUser}}</h3>
+                    <a target="_blank" v-bind:href="whatsapp()"><img alt="" src="img/whatsapp.png"></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <hr>
+        <div class="footer container">
+            <div class="slogan grid-10">
+                <img src="img/icone-site-removebg.png">
+                <p>"O que vale dessa vida é aproveitá-la."</p>
+            </div>
+    
+            <div class="redes-sociais grid-4">
+                <div>
+                    <a href="www.facebook.com.br" target="_blank"><img class="logo1" src="img/facebook.png"></a>
+                </div>
+                    
+                <div>
+                    <a href="www.instagram.com.br" target="_blank"><img class="logo2" src="img/instagram.png"></a>
+                </div>
+                   
+                <div>
+                    <a href="www.youtube.com.br" target="_blank"><img class="logo3" src="img/youtube.png"></a>
+                </div>
+                
+            </div>
+            
+        </div>
+    
+        <section class="creditos-section">
+            <hr>
+            <div class="creditos">
+                <p>COPYRIGHT © 2022 TODOS OS DIREITOS RESERVADOS.</p>
+            </div>
+        </section>
+    
+    </footer>
+
+
+    <script src="./js/anuncio.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aproveita</title>
+    <link rel="shortcut icon" href="/img/icone-site-removebg.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios@0.26.0/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="icone-site">
+                <a href="/" class="grid-4">
+                    <img src="img/icone-site.png">
+                </a>
+            </div>
+            <nav class="grid-12 header_menu">
+                <ul>
+                    <li>
+                        <div class="flex">
+                            <img class="logo1" src="img/megafone.png">
+                            <a href="/criar-anuncio">Criar anúncio</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="flex" id="app2">
+                            <img class="logo3" src="img/user.png">
+                            <a v-if="logado()" href="/usuario">{{nome}}</a>
+                            <a v-else="logado()" href="/login">Entrar</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="./js/logado.js"></script>
+
+    <section class="busca-section">
+
+        <div class="barra-de-busca flex" id="app3"> 
+
+            <label><img src="img/lupa.png"></label>
+            <input type="text" class="search-txt" placeholder="O que você está procurando?" v-on:keyup.enter="pesquisar()" v-model="nome">
+        </div>
+
+    </section>
+
+    <section class="categorias-section">
+        <div class="container">
+                <div class="categorias flex">
+
+                    <div class="elemento zoom">
+                            <a href="categoria?nome=eletronicos-e-celulares">
+                                <img src="img/celular.png">
+                                <p>Eletrônicos e celulares</p>
+                            </a>
+                    </div>
+
+                    <div class="elemento zoom">
+                            <a href="categoria?nome=livros-e-estudos">
+                                <img src="img/pilha-de-livros.png">
+                                <p>Livros e estudo</p>
+                            </a>
+                    </div>
+
+                    <div class="elemento zoom">
+                        <a href="categoria?nome=esportes-e-lazer">
+                            <img src="img/esporte.png">
+                            <p>Esportes e lazer</p>
+                        </a>
+                    </div>
+
+                    <div class="elemento zoom">
+                        <a href="categoria?nome=para-casa">
+                            <img src="img/trabalhando-em-casa.png">
+                            <p>Para casa</p>
+                        </a>
+                    </div>
+
+                    <div class="elemento zoom">
+                        <a href="categoria?nome=artesanato">
+                            <img src="img/artesanato-em-papel.png">
+                            <p>Artesanato</p>
+                        </a>
+                    </div>
+
+                    <div class="elemento zoom">
+                        <a href="categoria?nome=roupas-e-beleza">
+                            <img src="img/camiseta.png">
+                            <p>Roupas e beleza</p>
+                        </a>
+                    </div>
+
+                    <div class="elemento zoom">
+                        <a href="categoria?nome=saude">
+                            <img src="img/saude.png">
+                            <p>Saúde</p>
+                        </a>
+                    </div>
+
+                    <div class="elemento zoom">
+                        <a href="outros.html">
+                            <img src="img/de-outros.png">
+                            <p>Outros</p>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+    <section class="cadastro-section">
+        <div class="frase container">
+            <p>Quer fazer seu anúncio? Se cadastre!</p>
+        </div>
+
+        <div class="cadastro container">
+            <a data-anime="1200" href="/cadastro" class="btn-cadastro">Cadastro</a>
+        </div>
+        
+
+    </section>
+
+    <div class="divisoria">
+        
+    </div>
+
+    <section class="anuncios-recentes-section">
+        <div class="subtitulo-anuncios-recentes container">
+            <p>Confira os últimos anúncios </p>
+            <div id="app">
+
+                <div class="teste">
+                    <div class="card-produto flex" v-for="(produto,id) in produtos" :key="id">
+
+                        <a v-bind:href="anuncio(produto.id)">
+                            <div class="div-foto">
+                                <img alt="" v-bind:src="imagem(produto.id)">
+                            </div>
+                            
+                            <div class="div-preco">
+                                <h2>{{produto.nome}}</h2>
+                                <h1>R$ {{produto.preco}}</h1>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+        
+            </div>
+
+    </section>
+
+<footer class="footer-section">
+    <hr>
+    <div class="footer container">
+        <div class="slogan grid-10">
+            <img src="img/icone-site-removebg.png">
+            <p>"O que vale dessa vida é aproveitá-la."</p>
+        </div>
+
+        <div class="redes-sociais grid-4">
+            <div>
+                <a href="www.facebook.com.br" target="_blank"><img class="logo1" src="img/facebook.png"></a>
+            </div>
+                
+            <div>
+                <a href="www.instagram.com.br" target="_blank"><img class="logo2" src="img/instagram.png"></a>
+            </div>
+               
+            <div>
+                <a href="www.youtube.com.br" target="_blank"><img class="logo3" src="img/youtube.png"></a>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <section class="creditos-section">
+        <hr>
+        <div class="creditos">
+            <p>COPYRIGHT © 2022 TODOS OS DIREITOS RESERVADOS.</p>
+        </div>
+    </section>
+
+</footer>
+
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>

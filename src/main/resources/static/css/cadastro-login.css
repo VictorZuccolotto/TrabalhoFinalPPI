@@ -1,0 +1,201 @@
+/* Pagina de cadastro e Página de login*/
+
+img {
+	display: block
+}
+
+.fazer-cadastro-section, .fazer-login-section {
+	background-image: linear-gradient(to top,#f19f4d,#d9d9d9);
+	height: 100%;
+}
+
+.fazer-cadastro {
+	border-radius: 20px;
+}
+
+.fazer-cadastro-section p, .fazer-login-section p {
+	font-size: 15px;
+	font-weight: lighter;
+	text-align: center;
+	margin-top: 30px;
+	color: #404346;
+}
+
+.fazer-cadastro-section .fazer-cadastro {
+	background-color: #fff;
+	min-height: 620px;
+	margin-top: 100px;
+}
+
+.fazer-login-section .fazer-login {
+	background-color: #fff;
+	margin-top: 100px;
+	min-height: 700px;
+}
+
+.fazer-login {
+	border-radius: 20px;
+}
+
+.fazer-cadastro-section .fazer-cadastro h1, .fazer-login-section .fazer-login h1 {
+	text-align: center;
+	font-size: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.fazer-cadastro-section img, .fazer-login-section img{
+	width: 120px;
+	height: 90px;
+	margin: 0 auto;
+}
+
+.fazer-cadastro-section h1:after, .fazer-login-section h1:after {
+	content: "";
+	display: block;
+	width: 300px;
+	height: 2px;
+	background-color: #F19F4D;
+	margin: 0 auto;
+	margin-top: 50px;
+  }
+
+ .cad-form, .login-form {
+	margin-top: 40px;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 80px;
+}
+
+.cad-form input, .login-form input {
+	border-radius: 20px;
+}
+
+.cad-form .nome, .cad-form .sobre-nome, .cad-form .senha,.cad-form .email ,.cad-form .telefone,.cad-form .cep{
+	margin-bottom: 20px;
+	width: 330px;
+	height: 30px;
+	border-color: #D9D9D9;
+	border-style: solid;
+	padding: 10px;
+}
+
+.login-form .email, .senha {
+	margin-bottom: 20px;
+	width: 400px;
+	height: 30px;
+	border-color: #D9D9D9;
+	border-style: solid;
+	padding: 10px;
+}
+
+.cad-form .btn-cadastro, .login-form .btn-cadastro {
+	height: 60px;
+	width: 240px;
+	align-self: center;
+	margin-top: 20px;
+	margin-left: 80px;
+}
+
+.cad-form .labels, .cad-form .inputs {
+	flex-direction: column;
+}
+
+.cadastro-section .cad-form .divisao {
+	display: flex;
+}
+
+.labels {
+	margin-right: 10px;
+}
+
+.label-nome {
+	margin-top: 7px;
+	text-align: right;
+}
+
+.label-sobre-nome {
+	margin-top: 30px;
+}
+
+.label-email, .label-senha {
+	margin-top: 33px;
+	text-align: right;
+}
+
+.label-tel ,.label-cep {
+	margin-top: 30px;
+	text-align: right;
+}
+
+.opcaoLogin , .opcaoCadastro{
+	flex-direction: column;
+}
+
+.opcaoLogin p, .opcaoCadastro p {
+	margin-bottom: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #575555;
+}
+
+.opcaoLogin .btn-cadastro {
+	height: 50px;
+	width: 160px;
+	margin: 0 auto;
+	background-color: #EFEFEF;
+	margin-bottom: 40px;
+	border-radius: 20px;
+}
+
+.opcaoCadastro .btn-cadastro {
+	height: 60px;
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 15px;
+	background-color: #EFEFEF;
+	border-radius: 20px;
+}
+
+/* Erros no cadastro e login */
+
+.erro {
+    width: 50%;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.erro ul li {
+    color: red;
+    align-items: center;
+    text-align: center;
+}
+
+/* Responsibidade */
+
+@media (max-width: 796px) {
+
+	.fazer-cadastro, .fazer-login {
+		margin: 0 !important
+	}
+
+	.cad-form .labels, .login-form .labels {
+		width: 50px;
+	}
+
+	.cad-form .nome, .cad-form .sobre-nome, .cad-form .email, .cad-form .senha, .cad-form .telefone, .cad-form .cep {
+		width: 200px;
+		margin-left: 30px;
+	}
+
+	.cad-form .label-cep {
+		margin-right: 30px;
+	}
+
+	.login-form .nome, .login-form .email, .login-form .senha, .login-form .telefone, .cad-form .cep {
+		width: 200px;
+	}
+
+}
+

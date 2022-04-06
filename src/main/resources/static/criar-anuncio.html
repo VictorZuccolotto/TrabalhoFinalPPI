@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aproveita - Criar anúncio</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/criar-anuncio.css">
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios@0.26.0/dist/axios.min.js"></script>
+</head>
+
+<body>
+     <header class="header">
+        <div class="container">
+            <div class="icone-site">
+                <a href="/" class="grid-4">
+                    <img src="img/icone-site.png">
+                </a>
+            </div>
+            <nav class="grid-12 header_menu">
+                <ul>
+                    <li>
+                        <div class="flex">
+                            <img class="logo1" src="img/megafone.png">
+                            <a href="/criar-anuncio">Criar anúncio</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="flex" id="app2">
+                            <img class="logo3" src="img/user.png">
+                            <a v-if="logado()" href="/usuario">{{nome}}</a>
+                            <a v-else="logado()" href="/login">Entrar</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="./js/logado.js"></script>
+
+    <section class="criar-anuncio-section">
+
+        <div class="criar-anuncio container" >
+            <form method="post" action="/anuncio/criarAnuncio" target="frame" enctype="multipart/form-data" id="app">
+            <h1>Criando anúncio</h1>
+			<div class="erro container" style="display: flex">
+                <ul>
+                	<li v-for="erro in erros">{{erro}}</li>
+                </ul>
+            </div>
+                <div class="divisao flex">
+                    <div class="coluna1 flex">
+                        <label class="nome-label" for="nome-input">Nome do produto:</label>
+                        <label class="foto-label" for="foto-input">Fotos do produto:</label>
+                        <label class="categoria-label" for="categoria-input">Categoria:</label> 
+                        <label class="preco-label" for="preco-input">Preço:</label>
+                        <label class="descricao-label" for="descricao-input">Descrição:</label>
+                    </div>
+
+                    <div class="coluna2 flex"> 
+                        <input class="nome-input" name="nome" type="text" v-model="anuncio.nome">          
+                        <input class="foto-input" name="file" type="file" v-on:change="imagemFunc()">
+
+                        <select class="categoria-input" name="categoria" v-model="anuncio.categoria">
+                            <option value="1">Eletrônicos e celulares</option>
+                            <option value="2">Livros e estudo</option>
+                            <option value="3">Esportes e lazer</option>
+                            <option value="4">Para casa</option>
+                            <option value="5">Artesanato</option>
+                            <option value="6">Roupas e beleza</option>
+                            <option value="7">Saúde</option>
+                            <option value="8">Outros</option>
+                        </select>
+
+                        <input class="preco-input" name="preco" type="number" v-model="anuncio.preco">
+                        <textarea class="descricao-input" name="descricao" rows="10" cols="20"></textarea>
+                    </div>
+                </div> 
+                <div class="container">
+	                <iframe class="anuncio-salvo container" name="frame"></iframe>
+                </div>
+                <input class="btn-cadastro" v-on:click.prevent="botao()" type="submit" value="Criar">
+            </form>
+
+        </div>
+
+    </section>
+
+    <footer class="footer-section">
+        <hr>
+        <div class="footer container">
+            <div class="slogan grid-10">
+                <img src="img/icone-site-removebg.png">
+                <p>"O que vale dessa vida é aproveitá-la."</p>
+            </div>
+    
+            <div class="redes-sociais grid-4">
+                <div>
+                    <a href="www.facebook.com.br" target="_blank"><img class="logo1" src="img/facebook.png"></a>
+                </div>
+                    
+                <div>
+                    <a href="www.instagram.com.br" target="_blank"><img class="logo2" src="img/instagram.png"></a>
+                </div>
+                   
+                <div>
+                    <a href="www.youtube.com.br" target="_blank"><img class="logo3" src="img/youtube.png"></a>
+                </div>
+                
+            </div>
+            
+        </div>
+    
+        <section class="creditos-section">
+            <hr>
+            <div class="creditos">
+                <p>COPYRIGHT © 2022 TODOS OS DIREITOS RESERVADOS.</p>
+            </div>
+        </section>
+    
+    </footer>
+    
+
+    <script src="./js/criaAnuncio.js"></script>
+</body>
+
+</html>

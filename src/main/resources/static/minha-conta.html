@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aproveita - Usuário</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/usuario.css">
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios@0.26.0/dist/axios.min.js"></script>
+</head>
+<body>
+<header class="header">
+        <div class="container">
+            <div class="icone-site">
+                <a href="/" class="grid-4">
+                    <img src="img/icone-site.png">
+                </a>
+            </div>
+            <nav class="grid-12 header_menu">
+                <ul>
+                    <li>
+                        <div class="flex">
+                            <img class="logo1" src="img/megafone.png">
+                            <a href="/criar-anuncio">Criar anúncio</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="flex" id="app2">
+                            <img class="logo3" src="img/user.png">
+                            <a v-if="logado()" href="/usuario">{{nome}}</a>
+                            <a v-else="logado()" href="/login">Entrar</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="./js/logado.js"></script>
+
+    <section class="configuracao-section">
+        <div class="container configuracao flex" id="app">
+
+            <div class="menu flex">
+                <ul>
+                    <a href="/meus-anuncios"><li>Meus anúncios</li></a>
+                    <a href="/criar-anuncio"><li>Criar um anúncio</li></a>
+                    <a href="minha-conta.html"><li>Minha conta</li></a>
+                    <a v-on:click="sair()" href="/"><li>Sair</li></a>
+                </ul>
+            </div>
+
+            <div class="linha-vertical"></div>
+
+            <div class="mudar-dados flex">
+
+                <form class="mudar-dados-form flex" method="post" action="">
+
+                    <div class="nome">
+                        <label class="label-nome" for="nome">Nome: </label>
+                        <input class="nome-input" v-model="userDTO.nome" type="text" name="nome">
+                    </div>
+
+                    <div class="sobrenome">
+                        <label class="label-sobrenome" for="sobrenome">Sobrenome: </label>
+                        <input class="sobrenome-input"  v-model="userDTO.sobrenome" type="text" name="sobrenome">
+                    </div>
+
+                    <div class="telefone">
+                        <label class="label-tel" for="telefone">Telefone: </label>
+                        <input class="telefone-input" v-model="userDTO.telefone" type="text" name="telefone">
+                    </div>
+                    
+                    <div class="cep">
+                        <label class="label-cep" for="cep">CEP: </label>
+                        <input class="cep-input" v-model="userDTO.cep" type="text" name="cep">
+                    </div>
+                    
+                    <div class="senha">
+                        <p>Deixar em branco caso não haja intenção de trocar senha</p>
+                    </div>
+                    <div class="senha">
+                        <label class="label-senha" for="senhaNew">Senha nova: </label>
+                        <input class="senha-input" v-model="userDTO.senha" type="password" name="senha">
+                    </div>
+                    
+
+					<div class="senha">
+                        <label class="label-senha" for="senha">Senha atual*: </label>
+                        <input class="senha-input" v-model="userDTO.senhaOld" type="password" name="senhaOld">
+                    </div>
+    
+                        <input class="btn-cadastro" type="submit" v-on:click.prevent="botao()" value="Alterar"> 
+                </form>
+    
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <hr>
+        <div class="footer container">
+            <div class="slogan grid-10">
+                <img src="img/icone-site-removebg.png">
+                <p>"O que vale dessa vida é aproveitá-la."</p>
+            </div>
+    
+            <div class="redes-sociais grid-4">
+                <div>
+                    <a href="www.facebook.com.br" target="_blank"><img class="logo1" src="img/facebook.png"></a>
+                </div>
+                    
+                <div>
+                    <a href="www.instagram.com.br" target="_blank"><img class="logo2" src="img/instagram.png"></a>
+                </div>
+                   
+                <div>
+                    <a href="www.youtube.com.br" target="_blank"><img class="logo3" src="img/youtube.png"></a>
+                </div>
+                
+            </div>
+            
+        </div>
+    
+        <section class="creditos-section">
+            <hr>
+            <div class="creditos">
+                <p>COPYRIGHT © 2022 TODOS OS DIREITOS RESERVADOS.</p>
+            </div>
+        </section>
+    
+    </footer>
+
+    <script src="./js/minha-conta.js"></script>
+</body>
+</html>
